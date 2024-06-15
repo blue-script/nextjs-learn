@@ -16,6 +16,11 @@ header {
   padding: 20px 50px;
 }
 
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
 a {
   text-decoration: none;
   color: #cb2222;
@@ -23,4 +28,29 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.container {
+  padding: 50px
+}
+
+.post {
+  width: 500px;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #598191;
+  color: #000000;
+}
+
+.post h2 {
+  margin-bottom: 20px;
+}
+
+.post p {
+  margin-bottom: 10px;
+}
+
+.post a {
+  color: #238c44;
 }
