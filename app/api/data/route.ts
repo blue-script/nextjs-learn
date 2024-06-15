@@ -1,4 +1,4 @@
-export async function GET(request) {
+export async function GET() {
   const data = {
     name: 'Bob',
     age: 25,

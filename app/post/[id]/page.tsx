@@ -4,6 +4,20 @@ type Props = {
   params: { id: string }
 }
 
+type MetadataProps = {
+  params: { id: string }
+  searchParams: Record<string, any>
+}
+
+export async function generateMetadata({params, searchParams}: MetadataProps) {
+  const post = await fetchData(params.id)
+
+  return {
+    title: post.title,
+    description: post.body,
+  }
+}
+
 async function fetchData(id: string) {
   const data = await fetch('https://jsonplaceholder.typicode.com/posts/1' + id)
   return await data.json()
