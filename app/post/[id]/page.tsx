@@ -18,6 +18,17 @@ export async function generateMetadata({params, searchParams}: MetadataProps) {
   }
 }
 
+export async function generateStaticParams() {
+  // Загрузка всех постов для генерации параметров
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const posts = await response.json()
+
+  // Генерация параметров для статических страниц
+  return posts.map((post: PostType) => ({
+    id: post.id.toString(),
+  }))
+}
+
 async function fetchData(id: string) {
   const data = await fetch('https://jsonplaceholder.typicode.com/posts/1' + id)
   return await data.json()
